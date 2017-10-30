@@ -17,7 +17,10 @@
         "php": ">=5.4.0",
         "yiisoft/yii2": "~2.0.5",
         "yiisoft/yii2-bootstrap": "~2.0.0",
-        "yiisoft/yii2-swiftmailer": "~2.0.0"
+        "yiisoft/yii2-swiftmailer": "~2.0.0",
+        "kartik-v/yii2-widget-select2": "@dev",
+        "kartik-v/yii2-widgets": "*",
+        "kartik-v/yii2-checkbox-x": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
@@ -30,7 +33,7 @@
     },
     "config": {
         "process-timeout": 1800,
-        "fxp-asset":{
+        "fxp-asset": {
             "installer-paths": {
                 "npm-asset-library": "vendor/npm",
                 "bower-asset-library": "vendor/bower"
@@ -48,13 +51,11 @@
     },
     "extra": {
         "yii\\composer\\Installer::postCreateProject": {
-            "setPermission": [
-                {
-                    "runtime": "0777",
-                    "web/assets": "0777",
-                    "yii": "0755"
-                }
-            ]
+            "setPermission": [{
+                "runtime": "0777",
+                "web/assets": "0777",
+                "yii": "0755"
+            }]
         },
         "yii\\composer\\Installer::postInstall": {
             "generateCookieValidationKey": [
@@ -66,10 +67,8 @@
             "bower-asset-library": "vendor/bower"
         }
     },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://asset-packagist.org"
-        }
-    ]
+    "repositories": [{
+        "type": "composer",
+        "url": "https://asset-packagist.org"
+    }]
 }
